@@ -344,6 +344,15 @@ let fifth = dic["watermelon"]
 dic.updateValue("수박", forKey: "watermelon")
 let sixth = dic["watermelon"]
 
+for item in dic{
+    print("item = \(item)")
+}
+
+//모두 같은 의미
+//let emptyDic: [String : Int] = [:]
+//let emptyDic = [String : Int]()
+let emptyDic: [String : Int] = Dictionary<String, Int>()
+
 
 /**===================================**/
 
