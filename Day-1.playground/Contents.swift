@@ -233,3 +233,98 @@ b("hi")
 /**===================================**/
 
 
+func sayHi(completion: () -> Void){
+    print("안녕하세요")
+    
+    completion()
+}
+
+sayHi(completion: {
+    print("실행됨 1")
+})
+
+sayHi(){
+    print("실행됨 2")
+}
+
+sayHi {
+    print("실행됨 3")
+}
+
+
+func sayHiWithName(completion: (String)-> Void){
+    print("안녕하세요2")
+    completion("이름과 함께 말하세요")
+}
+
+sayHiWithName(completion: { (comment: String) in
+    print("넹 \(comment) 1")
+})
+
+sayHiWithName(completion: { comment in
+    print("넹 \(comment) 2")
+})
+
+sayHiWithName { comment in
+    print("넹 \(comment) 3")
+}
+
+func sayHiWithFullName(completion: (String,String) -> Void){
+    print("sayHiWithFullName() called")
+    
+    completion("first String", "Second String")
+}
+
+sayHiWithFullName(completion: { (first, second) in
+    print("first : \(first) , second : \(second) 1 ")
+})
+
+sayHiWithFullName { first, second in
+    print("first : \(first) , second : \(second) 2")
+}
+
+sayHiWithFullName {
+    print("first : \($0) , second : \($1) 3")
+}
+
+var closureTest: [Int] = [1,2,3,4,5,6]
+
+var cTest1 = closureTest.map { (number) in
+    return "숫자 \(number)"
+}
+
+var cTest2 = closureTest.map { (number:Int) in
+    return "숫자 \(number)"
+}
+
+var cTest3 = closureTest.map {
+    return "숫자 \($0)"
+}
+ 
+
+func closureTestFunc(closureFunc: (Int,Int)-> String){
+    print("clousreTestFunc() Called")
+    
+    closureFunc(1,3)
+}
+
+closureTestFunc(closureFunc: {first, second in
+    return "fisrtTest : \(first) secondTest : \(second)"
+})
+
+closureTestFunc(closureFunc: { (first:Int, second:Int) in
+    return "fisrtTest : \(first) secondTest : \(second)"
+})
+
+closureTestFunc { first, second in
+    return "fisrtTest : \(first) secondTest : \(second)"
+}
+
+closureTestFunc {
+    return "fisrtTest : \($0) secondTest : \($1)"
+}
+
+
+/**===================================**/
+
+
