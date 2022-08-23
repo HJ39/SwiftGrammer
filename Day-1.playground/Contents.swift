@@ -107,3 +107,39 @@ func unWrappedOptional(i: Int?){
 /**===================================**/
 
 
+struct TestStruct{
+    var name: String
+    var id: Int
+}
+
+var test1 = TestStruct(name: "JJ", id: 1)
+var test2 = test1   //Call by Value
+
+print("test1 = \(test1)")
+test2.id = 2
+print("test1 = \(test1)")
+print("test2 = \(test2)")
+
+
+class TestClass{
+    var name: String
+    var id: Int
+    init(name:String, id: Int){
+        self.name = name
+        self.id = id
+    }
+}
+
+var test3 = TestClass(name: "JJ", id: 1)
+var test4 = test3   //Call by Referance
+print("before test3 = \(test3.id)")
+print("before test4 = \(test4.id)")
+
+test4.id=2
+print("after test3 = \(test3.id)")
+print("after test4 = \(test4.id)")
+
+
+/**===================================**/
+
+
