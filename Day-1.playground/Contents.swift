@@ -157,3 +157,27 @@ id = 20
 
 /**===================================**/
 
+
+struct MyArray<SomeElement>{
+    
+    var elements: [SomeElement] = [SomeElement]()
+    
+    init(elements: [SomeElement]){
+        self.elements = elements
+    }
+    // _언더바 유무의 차이는 생성시 매개변수 선언 유무 차이
+    init(_ elements: [SomeElement]){
+        self.elements = elements
+    }
+}
+
+var intArray = MyArray(elements: [1,2,3])
+print("intArray : \(intArray.elements)")
+
+var stringArray = MyArray(["가","나","다"])
+print("stringArray : \(stringArray.elements)")
+
+
+/**===================================**/
+
+
