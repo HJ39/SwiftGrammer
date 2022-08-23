@@ -51,7 +51,25 @@ print("자전거 종류 \(MTBKorean.getBicycle())")
 
 /**===================================**/
 
-
+// ...은 0부터 5까지 출력
 for i in 0...5{
     print("i = \(i)")
 }
+
+// ..<은 0부터 4까지 출력
+for i in 0..<5{
+    print("i = \(i)")
+}
+
+//빈 배열 생성시 []사용
+var randomInt : [Int] = []
+
+print(randomInt)
+for _ in 0...10 {
+    //랜덤 숫자 발행시 사용
+    let randomNumber = Int.random(in: 0...100)
+    randomInt.append(randomNumber)
+}
+print(randomInt)
+
+/**===================================**/
