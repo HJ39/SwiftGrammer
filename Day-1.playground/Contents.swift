@@ -216,3 +216,20 @@ print("testing1 : \(testing1.elements[1].name)")
 /**===================================**/
 
 
+//변수를 함수화 시키는 느낌인것 같음
+let a = { (name: String) -> Int in
+    return 2
+}
+
+print("a = \(a("hi"))")
+
+let b = { (name: String) in
+    print("b 실행")
+}
+
+b("hi")
+
+
+/**===================================**/
+
+
