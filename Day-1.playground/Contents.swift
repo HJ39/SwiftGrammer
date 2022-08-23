@@ -177,6 +177,41 @@ print("intArray : \(intArray.elements)")
 var stringArray = MyArray(["가","나","다"])
 print("stringArray : \(stringArray.elements)")
 
+class AArray<SomeElement>{
+    var elements: [SomeElement] = [SomeElement]()
+    
+    init(_ elements: [SomeElement]){
+        self.elements = elements
+    }
+}
+
+var intClassArray = AArray([3,4,5])
+print("intClassArray : \(intClassArray.elements[1])")
+
+var stringClassArray = AArray(["a","b","c"])
+print("stringClassArray : \(stringClassArray.elements)")
+
+class Aclass{
+    var name: Int
+    
+    init(_ name: Int){
+        self.name = name
+    }
+}
+
+class Bclass<Aclass>{
+    var elements: [Aclass] = [Aclass]()
+    
+    init(_ elements: [Aclass]){
+        self.elements = elements
+    }
+}
+
+var testing1 = Bclass([Aclass(3),Aclass(2)])
+
+var bClassElements = testing1.elements
+print("testing1 : \(testing1.elements[1].name)")
+
 
 /**===================================**/
 
