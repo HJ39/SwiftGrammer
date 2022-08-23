@@ -328,3 +328,23 @@ closureTestFunc {
 /**===================================**/
 
 
+var dic = [ "apple" : "사과",
+            "orange" : "오렌지"]
+
+let first = dic["apple"]
+let second = dic["orange"]
+let third = dic["car", default: "없음"]
+
+dic["pineapple"] = "파인애플"
+let fourth = dic["pineapple"]
+
+dic.updateValue("멜론", forKey: "watermelon")
+let fifth = dic["watermelon"]
+
+dic.updateValue("수박", forKey: "watermelon")
+let sixth = dic["watermelon"]
+
+
+/**===================================**/
+
+
