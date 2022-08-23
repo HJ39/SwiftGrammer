@@ -72,4 +72,38 @@ for _ in 0...10 {
 }
 print(randomInt)
 
+
 /**===================================**/
+
+
+var optionalValue : Int?
+
+if optionalValue == nil{
+    optionalValue = 10
+}
+
+if let value = optionalValue{
+    print(value)
+}
+
+var value2 : Int?
+// ??를 사용하여 값이 없는 경우 ??다음 값을 넣겠다 라고 사용 가능
+print("value2 = \(value2 ?? 30)")
+if value2 == nil{
+    value2 = 90
+}
+print("value2 = \(value2 ?? 30)")
+
+unWrappedOptional(i: optionalValue)
+unWrappedOptional(i: value2)
+
+func unWrappedOptional(i: Int?){
+    //guard let 을 사용하는 경우 함수 내부에서 사용해야함
+    guard let opValue = i else { return }
+    print (opValue)
+}
+
+
+/**===================================**/
+
+
