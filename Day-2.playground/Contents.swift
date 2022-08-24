@@ -155,4 +155,45 @@ fr.getFullName()
 /**========================================================**/
 
 
+protocol PetHaving{
+    associatedtype T    //제네릭 타입을 사용하기 위해 associatedtype 사용
+    var pets: [T] { get set}
+    mutating func gotNewPet(_ newPet: T)
+}
+
+extension PetHaving{
+    mutating func gotNewPet(_ newPet: T){
+        self.pets.append(newPet)
+    }
+}
+
+enum Animal {
+    case dog, cat, bird
+}
+
+struct Friends: PetHaving{
+    var pets: [Animal] = []
+}
+
+struct Family: PetHaving{
+    var pets: [String] = []
+}
+
+var myFriend = Friends()
+
+myFriend.gotNewPet(Animal.bird)
+myFriend.gotNewPet(Animal.cat)
+myFriend.gotNewPet(Animal.dog)
+myFriend.pets
+
+var myFamily = Family()
+myFamily.gotNewPet("강아지")
+myFamily.gotNewPet("고양이")
+myFamily.gotNewPet("거북이")
+
+myFamily.pets
+
+
+/**========================================================**/
+
 
