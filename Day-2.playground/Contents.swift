@@ -142,3 +142,17 @@ Friend(name:"AJ")
 /**========================================================**/
 
 
+extension Naming{
+    func getFullName() -> String{
+        return self.name
+    }
+}
+
+let fr = Friend(name: "Ae")
+fr.getFullName()
+
+
+/**========================================================**/
+
+
+
