@@ -197,3 +197,64 @@ myFamily.pets
 /**========================================================**/
 
 
+protocol Aging{
+    func getAge() -> Int
+}
+
+typealias Friendable = Naming & Aging
+//protocol을 묶어서 한 번에 설정 할 수 있음
+
+struct Person : Friendable{
+    var name: String
+    var age : Int
+    
+    func getName() -> String {
+        return self.name
+    }
+    
+    func getAge() -> Int {
+        return self.age
+    }
+    
+}
+
+typealias FriendName = String
+
+typealias Fri = [Friends]
+var myFriendArray : Fri = []
+
+typealias StringBlock = (String) -> Void
+
+func sayingHi(completion: StringBlock){
+    print("Hi")
+    completion("Hello~")
+}
+
+sayingHi {
+    print("called \($0)")
+}
+
+class MyClass{
+    enum MY_TYPE {
+        case Dog
+        case Cat
+        case Bird
+    }
+    var myType = MY_TYPE.Dog
+}
+
+typealias MyType = MyClass.MY_TYPE
+
+var myClass = MyClass()
+
+//아래 두 표현은 같음 의미
+myClass.myType = MyClass.MY_TYPE.Dog
+print("\(myClass.myType)")
+
+myClass.myType = MyType.Dog
+print("\(myClass.myType)")
+
+
+/**========================================================**/
+
+
