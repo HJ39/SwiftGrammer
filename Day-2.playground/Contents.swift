@@ -118,3 +118,27 @@ setString
 /**========================================================**/
 
 
+/*
+ 약속 규약
+ **delegate, **able, **ing
+ */
+
+protocol Naming{    //interface와 비슷함
+    var name: String{ get set}
+    func getName() -> String
+}
+
+struct Friend: Naming{
+    var name: String
+    
+    func getName() -> String {
+        return "friend: \(self.name)"
+    }
+}
+
+Friend(name:"AJ")
+
+
+/**========================================================**/
+
+
