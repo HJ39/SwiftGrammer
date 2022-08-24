@@ -18,3 +18,49 @@ sayHi(&name)
 /**========================================================**/
 
 
+enum MismatchError: Error{  //타입이 Error임
+    case nameMismatch
+    case numberMismatch
+}
+
+func guessMyName(_ input: String) throws{
+    print("guessMyName() called")
+    if input != "JJ"{
+        print("Wrong!")
+        throw MismatchError.nameMismatch
+    }
+    print("Correct!")
+}
+
+do{
+    try guessMyName("JJa")
+    print("Correct!")
+}catch{
+    print("ERROR MESSAGE = \(error)")
+    print("Wrong!")
+}
+
+
+/// 번호를 맞춘다
+/// - Parameter input: 사용자 숫자 입력
+/// - Returns: true, false
+func guessMyNumber(_ input: Int) throws -> Bool {
+    print("guessMyNumber() called")
+    if input != 10 {
+        print("Wrong!")
+//        return false
+        throw MismatchError.numberMismatch
+    }
+    print("Correct!")
+    
+    return true
+}
+
+
+do{
+    let receiveValue = try guessMyNumber(10)
+    print(receiveValue)
+}catch{
+    print("ERROR MESSAGE = \(error)")
+    print("Wrong!") 
+}
