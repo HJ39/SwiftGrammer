@@ -62,5 +62,28 @@ do{
     print(receiveValue)
 }catch{
     print("ERROR MESSAGE = \(error)")
-    print("Wrong!") 
+    print("Wrong!")
 }
+
+
+/**========================================================**/
+
+
+struct mutatingStruct{
+    var name: String
+    
+    mutating func changeName(){
+        self.name = "hello! " + self.name
+    }
+}
+
+var a = mutatingStruct(name: "JJ")
+print(a.name)
+
+a.changeName()
+print(a.name)
+
+
+/**========================================================**/
+
+
