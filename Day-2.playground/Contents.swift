@@ -87,3 +87,34 @@ print(a.name)
 /**========================================================**/
 
 
+var setNumber = Set<Int>()
+setNumber.insert(1)
+setNumber.insert(2)
+setNumber.insert(2) //같은 값인 경우 중복 되지 않음
+setNumber.insert(3)
+setNumber.insert(3)
+
+setNumber.count
+
+var setString = Set<String>()
+setString.insert("a")
+setString.insert("a")
+setString.insert("b")
+setString.insert("b")
+setString.insert("ab")
+
+setString.count
+
+setString.contains("a")
+
+if let index = setString.firstIndex(of: "a"){
+    print("index : \(index)")
+    setString.remove(at: index)
+}
+
+setString
+
+
+/**========================================================**/
+
+
