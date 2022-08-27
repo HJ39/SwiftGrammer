@@ -171,3 +171,33 @@ BestFriend.sayhoho()    //override가 되지 않음
 
 /**==============================================================================**/
 
+enum InfoType {
+    case normal, best
+}
+
+struct Info{
+    var name: String
+    var type: InfoType
+}
+
+var InfoList = [
+    Info(name: "철수", type: .normal),
+    Info(name: "영희", type: .best),
+    Info(name: "제임스", type: .best),
+    Info(name: "수잔", type: .normal)
+]
+
+//let groupedInfo = Dictionary(grouping: InfoList, by: {$0.type})   //아래와 같음
+
+let groupedInfo = Dictionary(grouping: InfoList, by: {
+    (Info) -> InfoType in
+    return Info.type
+})
+
+print(groupedInfo)
+
+groupedInfo[.normal]
+groupedInfo[.best]
+
+
+/**==============================================================================**/
