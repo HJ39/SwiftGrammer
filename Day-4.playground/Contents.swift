@@ -31,3 +31,18 @@ let oddNumbers: [Int] = numbers.filter { aNumber in
 /**==============================================================================**/
 
 
+var myArray = [3,6,1,2,61,23,11,-1,2]
+
+var ascendingorderArray = myArray.sorted()
+//sorted는 배열을 정렬 후 반환 하는 것
+
+myArray.sort()
+//sort는 자기 자신을 정렬 하는 것
+
+var descendingArray = myArray.sorted(by: >)
+// 내림차순
+
+
+/**==============================================================================**/
+
+
