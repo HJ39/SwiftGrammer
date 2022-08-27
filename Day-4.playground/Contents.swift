@@ -139,3 +139,35 @@ print(faltMapped)
 /**==============================================================================**/
 
 
+class Friend{
+    func sayHi(){
+        print("Hello!")
+    }
+    class func sayBye(){
+        print("Bye~")
+    }
+    static func sayhoho(){  //final class func과 같음, override가 되지 않음
+        print("hiohoho")
+    }
+}
+class BestFriend: Friend{
+    class override  func sayBye() {
+        print("ByeBye!@@")
+    }
+    func sayhoho(){
+        print("hohohhohohhooe")
+    }
+}
+
+let fr = Friend()
+fr.sayHi()
+
+Friend.sayBye()
+Friend.sayhoho()
+
+BestFriend.sayBye()
+BestFriend.sayhoho()    //override가 되지 않음
+
+
+/**==============================================================================**/
+
