@@ -46,3 +46,31 @@ var descendingArray = myArray.sorted(by: >)
 /**==============================================================================**/
 
 
+struct MyPet{
+    var title: String = "타이틀 없음"
+    private (set) var name:String = "이름 없음"
+    /**
+     private 만 설정할 경우 읽고 쓰기 불가능
+     set을 사용하는 경우 변경하는 것만 불가능
+     */
+    
+    mutating func setName(to newName: String){
+    //struct 내용을 변경하기 위해 mutating사용
+        self.name = newName
+    }
+}
+
+var myPet = MyPet()
+myPet.name
+myPet.title
+
+myPet.title = "asdfasf"
+myPet.title
+
+//myPet.name = "KK" //private set이라 변경 불가능
+myPet.name
+
+
+/**==============================================================================**/
+
+
