@@ -86,3 +86,37 @@ for(index, array) in myArray.enumerated(){
 /**==============================================================================**/
 
 
+let friendsArray: [String] = ["철수","영희","민수"]
+
+let myFriends = friendsArray.map{ aFriend in
+    return "MyFriend: " + aFriend
+}
+
+let numbersArray: [Int] = [1,2,3,4]
+
+let chNumbers = numbers.map { num in
+    return num + 1
+}
+
+let petDictionary = ["Cat" : 1, "Dog": 2, "Cow": 3]
+
+let chPetDictionary1: [String] = petDictionary.map { (pet:String, num: Int) in
+    return "\(pet) 번호: \(num)"
+}
+
+let chPetDictionary2: [String] = petDictionary.map {
+    return "\($0) 번호: \($1)"
+}
+
+let foodArray: [String?] = ["apple", nil, "pear",nil,"orange"]
+let chFoodArray: [String] = foodArray
+    .compactMap { food in       //compactMap 사용 시 nil값을 걸러준다.
+         return food
+    }
+    .map { foods in     //map을 연계하여 사용 가능
+        return "food : \(foods)"
+    }
+
+
+/**==============================================================================**/
+
