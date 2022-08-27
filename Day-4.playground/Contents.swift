@@ -74,3 +74,15 @@ myPet.name
 /**==============================================================================**/
 
 
+myArray.forEach { array in
+    print(array)
+}
+
+for(index, array) in myArray.enumerated(){
+    print("index: \(index) , item: \(array)")
+}
+
+
+/**==============================================================================**/
+
+
